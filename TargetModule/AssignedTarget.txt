@@ -1,0 +1,35 @@
+{
+"result": "0",
+"resCode": "0",
+"resMessage": "",
+"data": [
+{
+"year": "2020",
+"month": "January",
+"salesrep_id": "1",
+"salesrep_name": "Sandesh Naik",
+"assigned_target": ""
+},
+{
+"year": "2020",
+"month": "January",
+"salesrep_id": "2",
+"salesrep_name": "Ajay Thakur",
+"assigned_target": ""
+},
+{
+"year": "2020",
+"month": "January",
+"salesrep_id": "3",
+"salesrep_name": "Monesh Jaiswal",
+"assigned_target": ""
+},
+{
+"year": "2020",
+"month": "January",
+"salesrep_id": "4",
+"salesrep_name": "Ajay Mehra",
+"assigned_target": ""
+}
+]
+}

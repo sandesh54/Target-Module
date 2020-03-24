@@ -1,0 +1,66 @@
+{
+"result": "0",
+"resCode": "0",
+"resMessage": "",
+"data": [{
+"year": "2020",
+"month": "January",
+"target": ""
+},
+{
+"year": "2020",
+"month": "February",
+"target": ""
+},
+{
+"year": "2020",
+"month": "March",
+"target": ""
+},
+{
+"year": "2020",
+"month": "April",
+"target": ""
+},
+{
+"year": "2020",
+"month": "May",
+"target": ""
+},
+{
+"year": "2020",
+"month": "June",
+"target": ""
+},
+{
+"year": "2020",
+"month": "July",
+"target": ""
+},
+{
+"year": "2020",
+"month": "August",
+"target": ""
+},
+{
+"year": "2020",
+"month": "September",
+"target": ""
+},
+{
+"year": "2020",
+"month": "October",
+"target": ""
+},
+{
+"year": "2020",
+"month": "November",
+"target": ""
+},
+{
+"year": "2020",
+"month": "December",
+"target": ""
+}
+]
+}

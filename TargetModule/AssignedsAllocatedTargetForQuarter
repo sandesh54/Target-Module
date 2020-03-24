@@ -1,0 +1,29 @@
+
+{
+"result": "0",
+"resCode": "0",
+"resMessage": "",
+"data": [
+{
+"year": "2020",
+"month": "January",
+"my_assigned_targer": "",
+"allocated_by_me": "",
+"pending_allocation": ""
+},
+{
+"year": "2020",
+"month": "February",
+"my_assigned_targer": "",
+"allocated_by_me": "",
+"pending_allocation": ""
+},
+{
+"year": "2020",
+"month": "March",
+"my_assigned_targer": "",
+"allocated_by_me": "",
+"pending_allocation": ""
+}
+]
+}
