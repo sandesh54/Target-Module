@@ -1,66 +1,62 @@
-{
-"result": "0",
-"resCode": "0",
-"resMessage": "",
-"data": [{
+[{
 "year": "2020",
 "month": "January",
-"target": ""
+"target": "52878"
 },
 {
 "year": "2020",
 "month": "February",
-"target": ""
+"target": "3424324"
 },
 {
 "year": "2020",
 "month": "March",
-"target": ""
+"target": "3245"
 },
 {
 "year": "2020",
 "month": "April",
-"target": ""
+"target": "8768"
 },
 {
 "year": "2020",
 "month": "May",
-"target": ""
+"target": "96785"
 },
 {
 "year": "2020",
 "month": "June",
-"target": ""
+"target": "3456436"
 },
 {
 "year": "2020",
 "month": "July",
-"target": ""
+"target": "4674"
 },
 {
 "year": "2020",
 "month": "August",
-"target": ""
+"target": "24245"
 },
 {
 "year": "2020",
 "month": "September",
-"target": ""
+"target": "97988"
 },
 {
 "year": "2020",
 "month": "October",
-"target": ""
+"target": "3245"
 },
 {
 "year": "2020",
 "month": "November",
-"target": ""
+"target": "25443"
 },
 {
 "year": "2020",
 "month": "December",
-"target": ""
+"target": "56792"
 }
 ]
-}
+

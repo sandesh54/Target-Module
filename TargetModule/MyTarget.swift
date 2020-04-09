@@ -9,8 +9,8 @@
 import Foundation
 
 
-struct YearlyTarget: Codable {
-    var year: String
-    var month: String?
-    var target: String?
+struct MyTargets: Codable {
+    var assigned_month: String
+    var assigned_year: String
+    var assigned_target_val: String
 }

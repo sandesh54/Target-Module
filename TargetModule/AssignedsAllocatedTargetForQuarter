@@ -1,9 +1,4 @@
-
-{
-"result": "0",
-"resCode": "0",
-"resMessage": "",
-"data": [
+[
 {
 "year": "2020",
 "month": "January",
@@ -26,4 +21,3 @@
 "pending_allocation": ""
 }
 ]
-}

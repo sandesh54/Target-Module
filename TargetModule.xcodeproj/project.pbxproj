@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		020B461C242F13ED00A905C5 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B461B242F13ED00A905C5 /* Network.swift */; };
+		020B461E242F1E2300A905C5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B461D242F1E2300A905C5 /* Extensions.swift */; };
+		020B468E2431A01400A905C5 /* SalesRep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B468D2431A01400A905C5 /* SalesRep.swift */; };
+		020B4711243604BA00A905C5 /* Calendar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B4710243604BA00A905C5 /* Calendar+Extension.swift */; };
+		020B47142436127000A905C5 /* ExpandingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B47122436127000A905C5 /* ExpandingCell.swift */; };
+		020B47152436127000A905C5 /* ExpandingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 020B47132436127000A905C5 /* ExpandingCell.xib */; };
 		02599D5424288F1800F88D2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02599D5324288F1800F88D2A /* AppDelegate.swift */; };
 		02599D5624288F1800F88D2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02599D5524288F1800F88D2A /* SceneDelegate.swift */; };
 		02599D5824288F1800F88D2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02599D5724288F1800F88D2A /* ViewController.swift */; };
@@ -15,16 +21,26 @@
 		02599D6024288F1C00F88D2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02599D5E24288F1C00F88D2A /* LaunchScreen.storyboard */; };
 		02599D6B2428903400F88D2A /* MyTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02599D6A2428903400F88D2A /* MyTarget.swift */; };
 		02599D6D242890B700F88D2A /* AssignedVsAllocatedTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02599D6C242890B700F88D2A /* AssignedVsAllocatedTarget.swift */; };
-		02599D6F2428916600F88D2A /* AssignedTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02599D6E2428916600F88D2A /* AssignedTarget.swift */; };
+		02599D6F2428916600F88D2A /* SalesRepTargets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02599D6E2428916600F88D2A /* SalesRepTargets.swift */; };
 		02599D71242891FA00F88D2A /* MyTarget.txt in Resources */ = {isa = PBXBuildFile; fileRef = 02599D70242891FA00F88D2A /* MyTarget.txt */; };
 		02599D732428A4AE00F88D2A /* AssignedsAllocatedTargetForYear.txt in Resources */ = {isa = PBXBuildFile; fileRef = 02599D722428A4AE00F88D2A /* AssignedsAllocatedTargetForYear.txt */; };
 		02599D752428B33900F88D2A /* AssignedsAllocatedTargetForQuarter in Resources */ = {isa = PBXBuildFile; fileRef = 02599D742428B33900F88D2A /* AssignedsAllocatedTargetForQuarter */; };
 		02599D772428B3A800F88D2A /* AssignedTarget.txt in Resources */ = {isa = PBXBuildFile; fileRef = 02599D762428B3A800F88D2A /* AssignedTarget.txt */; };
 		0268D39C2429FD5A0036E150 /* ManagerTargetDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0268D39B2429FD5A0036E150 /* ManagerTargetDetailVC.swift */; };
 		0268D39E242A0BC60036E150 /* TargetAssignedVsAllocatedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0268D39D242A0BC60036E150 /* TargetAssignedVsAllocatedCell.swift */; };
+		028F097E24361AAC00933479 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028F097C24361AAC00933479 /* CollectionViewCell.swift */; };
+		028F097F24361AAC00933479 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 028F097D24361AAC00933479 /* CollectionViewCell.xib */; };
+		02A321C0242C729600D6A5E3 /* SalesRepTargetDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A321BF242C729600D6A5E3 /* SalesRepTargetDetailsVC.swift */; };
+		02A321C2242C735800D6A5E3 /* SalesRepTargetDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A321C1242C735800D6A5E3 /* SalesRepTargetDetailCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		020B461B242F13ED00A905C5 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		020B461D242F1E2300A905C5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		020B468D2431A01400A905C5 /* SalesRep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesRep.swift; sourceTree = "<group>"; };
+		020B4710243604BA00A905C5 /* Calendar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+Extension.swift"; sourceTree = "<group>"; };
+		020B47122436127000A905C5 /* ExpandingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandingCell.swift; sourceTree = "<group>"; };
+		020B47132436127000A905C5 /* ExpandingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandingCell.xib; sourceTree = "<group>"; };
 		02599D5024288F1800F88D2A /* TargetModule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TargetModule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02599D5324288F1800F88D2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02599D5524288F1800F88D2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,13 +51,17 @@
 		02599D6124288F1C00F88D2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02599D6A2428903400F88D2A /* MyTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTarget.swift; sourceTree = "<group>"; };
 		02599D6C242890B700F88D2A /* AssignedVsAllocatedTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignedVsAllocatedTarget.swift; sourceTree = "<group>"; };
-		02599D6E2428916600F88D2A /* AssignedTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignedTarget.swift; sourceTree = "<group>"; };
+		02599D6E2428916600F88D2A /* SalesRepTargets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesRepTargets.swift; sourceTree = "<group>"; };
 		02599D70242891FA00F88D2A /* MyTarget.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = MyTarget.txt; sourceTree = "<group>"; };
 		02599D722428A4AE00F88D2A /* AssignedsAllocatedTargetForYear.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = AssignedsAllocatedTargetForYear.txt; sourceTree = "<group>"; };
 		02599D742428B33900F88D2A /* AssignedsAllocatedTargetForQuarter */ = {isa = PBXFileReference; lastKnownFileType = text; path = AssignedsAllocatedTargetForQuarter; sourceTree = "<group>"; };
 		02599D762428B3A800F88D2A /* AssignedTarget.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = AssignedTarget.txt; sourceTree = "<group>"; };
 		0268D39B2429FD5A0036E150 /* ManagerTargetDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerTargetDetailVC.swift; sourceTree = "<group>"; };
 		0268D39D242A0BC60036E150 /* TargetAssignedVsAllocatedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetAssignedVsAllocatedCell.swift; sourceTree = "<group>"; };
+		028F097C24361AAC00933479 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		028F097D24361AAC00933479 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		02A321BF242C729600D6A5E3 /* SalesRepTargetDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesRepTargetDetailsVC.swift; sourceTree = "<group>"; };
+		02A321C1242C735800D6A5E3 /* SalesRepTargetDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesRepTargetDetailCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +75,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		020B461A242F13C700A905C5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				020B461B242F13ED00A905C5 /* Network.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		020B47162436127400A905C5 /* ExpandingCell */ = {
+			isa = PBXGroup;
+			children = (
+				020B47132436127000A905C5 /* ExpandingCell.xib */,
+				020B47122436127000A905C5 /* ExpandingCell.swift */,
+				028F097C24361AAC00933479 /* CollectionViewCell.swift */,
+				028F097D24361AAC00933479 /* CollectionViewCell.xib */,
+			);
+			name = ExpandingCell;
+			sourceTree = "<group>";
+		};
 		02599D4724288F1800F88D2A = {
 			isa = PBXGroup;
 			children = (
@@ -74,14 +113,19 @@
 		02599D5224288F1800F88D2A /* TargetModule */ = {
 			isa = PBXGroup;
 			children = (
+				020B461A242F13C700A905C5 /* Network */,
 				02599D6924288FB100F88D2A /* Models */,
 				02599D6824288FA700F88D2A /* Data */,
 				02599D5724288F1800F88D2A /* ViewController.swift */,
 				02599D5924288F1800F88D2A /* Main.storyboard */,
 				0268D39B2429FD5A0036E150 /* ManagerTargetDetailVC.swift */,
+				02A321BF242C729600D6A5E3 /* SalesRepTargetDetailsVC.swift */,
 				02599D6724288F8600F88D2A /* App Files */,
 				02599D6124288F1C00F88D2A /* Info.plist */,
 				0268D39A2429EC170036E150 /* TableViewCell */,
+				020B461D242F1E2300A905C5 /* Extensions.swift */,
+				020B4710243604BA00A905C5 /* Calendar+Extension.swift */,
+				020B47162436127400A905C5 /* ExpandingCell */,
 			);
 			path = TargetModule;
 			sourceTree = "<group>";
@@ -113,7 +157,8 @@
 			children = (
 				02599D6A2428903400F88D2A /* MyTarget.swift */,
 				02599D6C242890B700F88D2A /* AssignedVsAllocatedTarget.swift */,
-				02599D6E2428916600F88D2A /* AssignedTarget.swift */,
+				02599D6E2428916600F88D2A /* SalesRepTargets.swift */,
+				020B468D2431A01400A905C5 /* SalesRep.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -122,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				0268D39D242A0BC60036E150 /* TargetAssignedVsAllocatedCell.swift */,
+				02A321C1242C735800D6A5E3 /* SalesRepTargetDetailCell.swift */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -184,6 +230,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				020B47152436127000A905C5 /* ExpandingCell.xib in Resources */,
 				02599D752428B33900F88D2A /* AssignedsAllocatedTargetForQuarter in Resources */,
 				02599D732428A4AE00F88D2A /* AssignedsAllocatedTargetForYear.txt in Resources */,
 				02599D772428B3A800F88D2A /* AssignedTarget.txt in Resources */,
@@ -191,6 +238,7 @@
 				02599D5D24288F1C00F88D2A /* Assets.xcassets in Resources */,
 				02599D71242891FA00F88D2A /* MyTarget.txt in Resources */,
 				02599D5B24288F1800F88D2A /* Main.storyboard in Resources */,
+				028F097F24361AAC00933479 /* CollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,12 +251,20 @@
 			files = (
 				02599D5824288F1800F88D2A /* ViewController.swift in Sources */,
 				02599D6D242890B700F88D2A /* AssignedVsAllocatedTarget.swift in Sources */,
-				02599D6F2428916600F88D2A /* AssignedTarget.swift in Sources */,
+				02A321C2242C735800D6A5E3 /* SalesRepTargetDetailCell.swift in Sources */,
+				020B468E2431A01400A905C5 /* SalesRep.swift in Sources */,
+				02599D6F2428916600F88D2A /* SalesRepTargets.swift in Sources */,
 				02599D5424288F1800F88D2A /* AppDelegate.swift in Sources */,
+				020B461C242F13ED00A905C5 /* Network.swift in Sources */,
 				02599D6B2428903400F88D2A /* MyTarget.swift in Sources */,
+				020B461E242F1E2300A905C5 /* Extensions.swift in Sources */,
 				0268D39E242A0BC60036E150 /* TargetAssignedVsAllocatedCell.swift in Sources */,
+				028F097E24361AAC00933479 /* CollectionViewCell.swift in Sources */,
+				02A321C0242C729600D6A5E3 /* SalesRepTargetDetailsVC.swift in Sources */,
+				020B47142436127000A905C5 /* ExpandingCell.swift in Sources */,
 				02599D5624288F1800F88D2A /* SceneDelegate.swift in Sources */,
 				0268D39C2429FD5A0036E150 /* ManagerTargetDetailVC.swift in Sources */,
+				020B4711243604BA00A905C5 /* Calendar+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

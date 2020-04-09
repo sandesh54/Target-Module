@@ -1,91 +1,87 @@
-{
-"result": "0",
-"resCode": "0",
-"resMessage": "",
-"data": [
+[
 {
 "year": "2020",
 "month": "January",
-"my_assigned_targer": "",
-"allocated_by_me": "",
-"pending_allocation": ""
+"my_assigned_targer": "10000",
+"allocated_by_me": "5000",
+"pending_allocation": "5000"
 },
 {
 "year": "2020",
 "month": "February",
-"my_assigned_targer": "",
-"allocated_by_me": "",
-"pending_allocation": ""
+"my_assigned_targer": "10000",
+"allocated_by_me": "5000",
+"pending_allocation": "5000"
 },
 {
 "year": "2020",
 "month": "March",
-"my_assigned_targer": "",
-"allocated_by_me": "",
-"pending_allocation": ""
+"my_assigned_targer": "10000",
+"allocated_by_me": "5000",
+"pending_allocation": "5000"
 },
 {
 "year": "2020",
 "month": "April",
-"my_assigned_targer": "",
-"allocated_by_me": "",
-"pending_allocation": ""
+"my_assigned_targer": "10000",
+"allocated_by_me": "5000",
+"pending_allocation": "5000"
 },
 {
 "year": "2020",
 "month": "May",
-"my_assigned_targer": "",
-"allocated_by_me": "",
-"pending_allocation": ""
+"my_assigned_targer": "10000",
+"allocated_by_me": "5000",
+"pending_allocation": "5000"
 },
 {
 "year": "2020",
 "month": "June",
-"my_assigned_targer": "",
-"allocated_by_me": "",
-"pending_allocation": ""
+"my_assigned_targer": "10000",
+"allocated_by_me": "5000",
+"pending_allocation": "5000"
 },
 {
 "year": "2020",
 "month": "July",
-"my_assigned_targer": "",
-"allocated_by_me": "",
-"pending_allocation": ""
+"my_assigned_targer": "10000",
+"allocated_by_me": "5000",
+"pending_allocation": "5000"
 },
 {
 "year": "2020",
 "month": "August",
-"my_assigned_targer": "",
-"allocated_by_me": "",
-"pending_allocation": ""
+"my_assigned_targer": "10000",
+"allocated_by_me": "5000",
+"pending_allocation": "5000"
 },
 {
 "year": "2020",
 "month": "September",
-"my_assigned_targer": "",
-"allocated_by_me": "",
-"pending_allocation": ""
+"my_assigned_targer": "10000",
+"allocated_by_me": "5000",
+"pending_allocation": "5000"
 },
 {
 "year": "2020",
 "month": "October",
-"my_assigned_targer": "",
-"allocated_by_me": "",
-"pending_allocation": ""
+"my_assigned_targer": "10000",
+"allocated_by_me": "5000",
+"pending_allocation": "5000"
 },
 {
 "year": "2020",
 "month": "November",
-"my_assigned_targer": "",
-"allocated_by_me": "",
-"pending_allocation": ""
+"my_assigned_targer": "10000",
+"allocated_by_me": "5000",
+"pending_allocation": "5000"
 },
 {
 "year": "2020",
 "month": "December",
-"my_assigned_targer": "",
-"allocated_by_me": "",
-"pending_allocation": ""
+"my_assigned_targer": "10000",
+"allocated_by_me": "5000",
+"pending_allocation": "5000"
 }
 ]
-}
+
