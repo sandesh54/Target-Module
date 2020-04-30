@@ -83,8 +83,8 @@ class ExpandingCell: UITableViewCell {
             "userid" : "1",
             "target_typeid" : "1",
             "yearval" : "2020",
-            "frommonth" : "4",
-            "tomonth" : "6"
+            "frommonth" : "\(quarterRanger.form)",
+            "tomonth" : "\(quarterRanger.to)"
         ]
         
         Network.fetchDataFor(.getTeamwiseAssignedTargets,parameters: parameters) { data, response, error in
@@ -100,7 +100,14 @@ class ExpandingCell: UITableViewCell {
                                         fatalError("unable to covert data to AllocatedVSAssignedTarget")
                                     }
                                     DispatchQueue.main.async {
-                                        self.salesRepTargets = targets
+                                        if targets.isEmpty {
+                                            let year = Int(self.dataSource!.getYearForTargets(for: self))!
+                                            let quarter = self.dataSource!.getQuarterForTargets(for: self)
+                                            self.salesRepTargets = SalesRepTargets.getNewEmptyTarget(for: year, quarter: quarter, salesRep: self.salesRep)
+                                        } else {
+                                             self.salesRepTargets = targets
+                                        }
+                                        
                                     }
                                 }
                             }

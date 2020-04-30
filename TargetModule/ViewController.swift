@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     
     private let parameters = [
            "userrole" : "2",
-           "userid" : "1"
+           "userid" : "9"
        ]
     
     
@@ -157,46 +157,6 @@ class ViewController: UIViewController {
         return dateFormatter.string(from: Date())
     }
     
-//    #warning("Below func create dummy data delete once not needed")
-//    private func createDummyData() {
-//
-//
-//
-//        var assignedVsAllocatedTargetsData = Data()
-//            guard let assignedVsAllocatedTargetsYearlyFile = Bundle.main.url(forResource: "AssignedsAllocatedTargetForYear", withExtension: "txt")
-//                else { fatalError("AssignedsAllocatedTargetForYear.txt is not found") }
-//
-//            guard  let data = try? Data(contentsOf: assignedVsAllocatedTargetsYearlyFile)  else {
-//                fatalError("Data from AssignedsAllocatedTargetForYear.txt could not be read")
-//            }
-//            assignedVsAllocatedTargetsData = data
-//
-//
-//        guard let assignedTargetsFile = Bundle.main.url(forResource: "AssignedTarget", withExtension: "txt")
-//            else { fatalError("AssignedTarget.txt is not found") }
-//
-//        guard  let assignedTargets = try? Data(contentsOf: assignedTargetsFile)  else {
-//            fatalError("Data from AssignedTarget.txt could not be read")
-//        }
-//
-//        let jsonDecoder = JSONDecoder()
-//
-//
-//
-//
-//        guard let allocatedVsAssignedTargets = try? jsonDecoder.decode([AllocatedVSAssignedTarget].self, from: assignedVsAllocatedTargetsData) else {
-//            fatalError("Allocatedvs assigned tagets files issue to json conversion failed")
-//        }
-//        self.allocatedVsAssignegedTargets = allocatedVsAssignedTargets
-//
-//        guard let salesRepTargets = try? jsonDecoder.decode([AssignedTarget].self, from: assignedTargets) else {
-//            fatalError("AssignedTarget.txt to json conversion failed")
-//        }
-//        self.assignedTarget = salesRepTargets
-//
-//
-//    }
-    
     private func fetchSalesRepTargets() {
         Network.fetchDataFor(.getUserForTargetAssignment, parameters: parameters) { (data, response, error) in
                 if error == nil {
@@ -332,12 +292,37 @@ extension ViewController: UITableViewDataSource {
         return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44
+    }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if tableView.tag == salesRepTableViewTag {
-            return "Sales Rep Details"
-        }
+            let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 80))
+            let label = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width - 44, height: 44))
+            label.text = "Sales Rep Details"
+            view.addSubview(label)
+            let button = UIButton(frame: CGRect(x: tableView.bounds.width - 44, y: 0, width: 44, height: 44))
+            button.backgroundColor = .red
+            button.addTarget(self, action: #selector(notifyUsers), for: .touchUpInside)
+            view.addSubview(button)
+            view.backgroundColor = .white
+            view.backgroundColor = .green
+            return view
+       }
         return nil
+    }
+    
+    @objc private func notifyUsers(_ sender: UIButton) {
+        let parameter = [
+            "userrole": "2",
+            "userid": "9"
+        ]
+        Network.fetchDataFor(.getUserForTargetAssignmentNotifier, parameters: parameter) { data, response, error in
+            if error == nil {
+                
+            }
+        }
     }
 }
 

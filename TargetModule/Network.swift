@@ -14,6 +14,8 @@ struct Network {
         case getQueryPlanedTargetView = "getQueryPlanedTargetView"
         case getUserIdWiseAssignedTargets = "getUserIdWiseAssignedTargets"
         case getUserForTargetAssignment = "getUserForTargetAssignment"
+        case addUpdateSalesTarget = "addUpdateSalesTarget"
+        case getUserForTargetAssignmentNotifier = "getUserForTargetAssignmentNotifier"
     }
     private static let api = "http://103.93.16.230:8880/manager_webservices_v2/rest/skygge/"
     
