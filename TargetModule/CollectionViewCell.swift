@@ -31,8 +31,10 @@ class CollectionViewCell: UICollectionViewCell {
 
     
     @IBAction private func saveNewTarget(_ sender: UIButton) {
-        //typeid: 0 for insert and 1 for update
+        //targetid: 0 for insert and 1 for update
         #warning("Below paramenters needs to based on sales rep target info wherever needed. For new targer insertion some data will be blank")
+        #warning("Need to test this functionlity based on new ID")
+        //NOTE: TARGET TYPE ID 1 BY DEFAULT
         let parametes = [
             "targetid" : "2",
             "assign_to" : "1",

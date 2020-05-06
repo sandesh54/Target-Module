@@ -319,8 +319,10 @@ extension ViewController: UITableViewDataSource {
             "userid": "9"
         ]
         Network.fetchDataFor(.getUserForTargetAssignmentNotifier, parameters: parameter) { data, response, error in
-            if error == nil {
-                
+            if error == nil, data != nil {
+                print(String(data: data!, encoding: .utf8) ?? "")
+            } else {
+                 print(error!.localizedDescription)
             }
         }
     }
