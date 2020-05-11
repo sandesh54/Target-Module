@@ -123,13 +123,13 @@ class TeamMemberTargetsDetailVC: UIViewController {
         
         let entry1 = BarChartDataEntry(x: 1, y:20)
         let entry2 = BarChartDataEntry(x: 1, y:10)
-        let entry3 = BarChartDataEntry(x: 3, yValues: [25,27])
+        let entry3 = BarChartDataEntry(x: 2, yValues: [25,27])
         
                 
         let barChartSet1 = BarChartDataSet(entries: [entry1,entry2,entry3])
         barChartSet1.stackLabels = ["Assigned","Acheived"]
         barChartSet1.barShadowColor = .darkGray
-        barChartSet1.colors = [.red,UIColor.green.withAlphaComponent(0.1)]
+        barChartSet1.colors = [UIColor.green.withAlphaComponent(0.6)]
         barChartSet1.label = "Months"
         let data = BarChartData(dataSets: [barChartSet1])
         

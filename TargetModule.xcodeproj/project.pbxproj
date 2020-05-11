@@ -22,12 +22,9 @@
 		02599D6B2428903400F88D2A /* MyTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02599D6A2428903400F88D2A /* MyTarget.swift */; };
 		02599D6D242890B700F88D2A /* AssignedVsAllocatedTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02599D6C242890B700F88D2A /* AssignedVsAllocatedTarget.swift */; };
 		02599D6F2428916600F88D2A /* SalesRepTargets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02599D6E2428916600F88D2A /* SalesRepTargets.swift */; };
-		02599D71242891FA00F88D2A /* MyTarget.txt in Resources */ = {isa = PBXBuildFile; fileRef = 02599D70242891FA00F88D2A /* MyTarget.txt */; };
-		02599D732428A4AE00F88D2A /* AssignedsAllocatedTargetForYear.txt in Resources */ = {isa = PBXBuildFile; fileRef = 02599D722428A4AE00F88D2A /* AssignedsAllocatedTargetForYear.txt */; };
-		02599D752428B33900F88D2A /* AssignedsAllocatedTargetForQuarter in Resources */ = {isa = PBXBuildFile; fileRef = 02599D742428B33900F88D2A /* AssignedsAllocatedTargetForQuarter */; };
-		02599D772428B3A800F88D2A /* AssignedTarget.txt in Resources */ = {isa = PBXBuildFile; fileRef = 02599D762428B3A800F88D2A /* AssignedTarget.txt */; };
 		0268D39C2429FD5A0036E150 /* ManagerTargetDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0268D39B2429FD5A0036E150 /* ManagerTargetDetailVC.swift */; };
 		0268D39E242A0BC60036E150 /* TargetAssignedVsAllocatedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0268D39D242A0BC60036E150 /* TargetAssignedVsAllocatedCell.swift */; };
+		0282C21C2469504000C4325A /* MyTarget.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0282C21B2469504000C4325A /* MyTarget.txt */; };
 		028F097E24361AAC00933479 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028F097C24361AAC00933479 /* CollectionViewCell.swift */; };
 		028F097F24361AAC00933479 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 028F097D24361AAC00933479 /* CollectionViewCell.xib */; };
 		0299384D2461255800C05699 /* TargetMonitor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0299384C2461255800C05699 /* TargetMonitor.storyboard */; };
@@ -56,12 +53,9 @@
 		02599D6A2428903400F88D2A /* MyTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTarget.swift; sourceTree = "<group>"; };
 		02599D6C242890B700F88D2A /* AssignedVsAllocatedTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignedVsAllocatedTarget.swift; sourceTree = "<group>"; };
 		02599D6E2428916600F88D2A /* SalesRepTargets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesRepTargets.swift; sourceTree = "<group>"; };
-		02599D70242891FA00F88D2A /* MyTarget.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = MyTarget.txt; sourceTree = "<group>"; };
-		02599D722428A4AE00F88D2A /* AssignedsAllocatedTargetForYear.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = AssignedsAllocatedTargetForYear.txt; sourceTree = "<group>"; };
-		02599D742428B33900F88D2A /* AssignedsAllocatedTargetForQuarter */ = {isa = PBXFileReference; lastKnownFileType = text; path = AssignedsAllocatedTargetForQuarter; sourceTree = "<group>"; };
-		02599D762428B3A800F88D2A /* AssignedTarget.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = AssignedTarget.txt; sourceTree = "<group>"; };
 		0268D39B2429FD5A0036E150 /* ManagerTargetDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerTargetDetailVC.swift; sourceTree = "<group>"; };
 		0268D39D242A0BC60036E150 /* TargetAssignedVsAllocatedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetAssignedVsAllocatedCell.swift; sourceTree = "<group>"; };
+		0282C21B2469504000C4325A /* MyTarget.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MyTarget.txt; sourceTree = "<group>"; };
 		028F097C24361AAC00933479 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		028F097D24361AAC00933479 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		0299384C2461255800C05699 /* TargetMonitor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TargetMonitor.storyboard; sourceTree = "<group>"; };
@@ -154,10 +148,7 @@
 		02599D6824288FA700F88D2A /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				02599D70242891FA00F88D2A /* MyTarget.txt */,
-				02599D722428A4AE00F88D2A /* AssignedsAllocatedTargetForYear.txt */,
-				02599D742428B33900F88D2A /* AssignedsAllocatedTargetForQuarter */,
-				02599D762428B3A800F88D2A /* AssignedTarget.txt */,
+				0282C21B2469504000C4325A /* MyTarget.txt */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -306,14 +297,11 @@
 			files = (
 				0299384D2461255800C05699 /* TargetMonitor.storyboard in Resources */,
 				020B47152436127000A905C5 /* ExpandingCell.xib in Resources */,
-				02599D752428B33900F88D2A /* AssignedsAllocatedTargetForQuarter in Resources */,
-				02599D732428A4AE00F88D2A /* AssignedsAllocatedTargetForYear.txt in Resources */,
-				02599D772428B3A800F88D2A /* AssignedTarget.txt in Resources */,
 				02599D6024288F1C00F88D2A /* LaunchScreen.storyboard in Resources */,
 				02599D5D24288F1C00F88D2A /* Assets.xcassets in Resources */,
-				02599D71242891FA00F88D2A /* MyTarget.txt in Resources */,
 				02599D5B24288F1800F88D2A /* Main.storyboard in Resources */,
 				028F097F24361AAC00933479 /* CollectionViewCell.xib in Resources */,
+				0282C21C2469504000C4325A /* MyTarget.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

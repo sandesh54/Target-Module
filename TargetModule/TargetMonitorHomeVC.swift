@@ -12,7 +12,12 @@ class TargetMonitorHomeVC: UIViewController {
     
     private var teamMember: [SalesRep] = [SalesRep(user_id: "1", person_name: "Akshay", assigned_to_type: "2")]
     private var selectedTeamMember: SalesRep?
+    
+    @IBOutlet private weak var yearSelectionButton: UIButton!
+    @IBOutlet private weak var quarterSelectionButton: UIButton!
     @IBOutlet private weak var pieChart: PieChartView!
+    @IBOutlet private weak var barChart: BarChartView!
+    @IBOutlet private weak var detailViewSwitch: UISwitch!
     @IBOutlet private weak var salesRepTableView: UITableView!
     
 
@@ -21,9 +26,21 @@ class TargetMonitorHomeVC: UIViewController {
         super.viewDidLoad()
         
         setupTableView()
+       
+    }
+    
+    //MARK: - Subview setup
+    private func setupTableView() {
+        salesRepTableView.dataSource = self
+        salesRepTableView.delegate = self
+        salesRepTableView.reloadData()
+        salesRepTableView.tableFooterView = UIView()
+    }
+    
+    private func setupPieChartView() {
         let months = ["Achived", "Pending"]
         let unitsSold:[Double] = [23000, 27000]
-        pieChart.drawHoleEnabled = false
+        pieChart.drawHoleEnabled = true
         pieChart.rotationEnabled = false
         pieChart.highlightPerTapEnabled = false
         pieChart.entryLabelColor = .red
@@ -31,11 +48,8 @@ class TargetMonitorHomeVC: UIViewController {
         pieChart.animate(xAxisDuration: 1)
     }
     
-    private func setupTableView() {
-        salesRepTableView.dataSource = self
-        salesRepTableView.delegate = self
-        salesRepTableView.reloadData()
-        salesRepTableView.tableFooterView = UIView()
+    private func setupBarChartView() {
+        
     }
     
     
