@@ -27,6 +27,17 @@ struct SalesRepTargets: Codable {
     private(set) var assigned_to: String
     private(set) var assigned_month: String
     private(set) var assigned_target_val: String
+    
+    
+    var getAssignedTarget: Double {
+        if let target = Double(assigned_target_val) { return target}
+        else { return 0 }
+    }
+    
+    var getAchievedTarget: Double {
+        let val = Array(10000 ... 50000).randomElement()!
+        return Double(val)
+    }
 }
 
 
@@ -95,4 +106,20 @@ extension SalesRepTargets {
                                assigned_month: month,
                                assigned_target_val: "")
     }
+    
+    static let dummyTargets = [
+        SalesRepTargets(assigned_date: "", target_type_id: "", target_id: "", assigned_year: "", assigned_to_type: "", assigned_by: "", assigned_to: "", assigned_month: "1", assigned_target_val: "23344"),
+        SalesRepTargets(assigned_date: "", target_type_id: "", target_id: "", assigned_year: "", assigned_to_type: "", assigned_by: "", assigned_to: "", assigned_month: "2", assigned_target_val: "22344"),
+        SalesRepTargets(assigned_date: "", target_type_id: "", target_id: "", assigned_year: "", assigned_to_type: "", assigned_by: "", assigned_to: "", assigned_month: "3", assigned_target_val: "43565"),
+        SalesRepTargets(assigned_date: "", target_type_id: "", target_id: "", assigned_year: "", assigned_to_type: "", assigned_by: "", assigned_to: "", assigned_month: "4", assigned_target_val: "74545"),
+        SalesRepTargets(assigned_date: "", target_type_id: "", target_id: "", assigned_year: "", assigned_to_type: "", assigned_by: "", assigned_to: "", assigned_month: "5", assigned_target_val: "34566"),
+        SalesRepTargets(assigned_date: "", target_type_id: "", target_id: "", assigned_year: "", assigned_to_type: "", assigned_by: "", assigned_to: "", assigned_month: "6", assigned_target_val: "48564"),
+        SalesRepTargets(assigned_date: "", target_type_id: "", target_id: "", assigned_year: "", assigned_to_type: "", assigned_by: "", assigned_to: "", assigned_month: "7", assigned_target_val: "65474"),
+        SalesRepTargets(assigned_date: "", target_type_id: "", target_id: "", assigned_year: "", assigned_to_type: "", assigned_by: "", assigned_to: "", assigned_month: "8", assigned_target_val: "34367"),
+        SalesRepTargets(assigned_date: "", target_type_id: "", target_id: "", assigned_year: "", assigned_to_type: "", assigned_by: "", assigned_to: "", assigned_month: "9", assigned_target_val: "23555"),
+        SalesRepTargets(assigned_date: "", target_type_id: "", target_id: "", assigned_year: "", assigned_to_type: "", assigned_by: "", assigned_to: "", assigned_month: "10", assigned_target_val: "76856"),
+        SalesRepTargets(assigned_date: "", target_type_id: "", target_id: "", assigned_year: "", assigned_to_type: "", assigned_by: "", assigned_to: "", assigned_month: "11", assigned_target_val: "67655"),
+        SalesRepTargets(assigned_date: "", target_type_id: "", target_id: "", assigned_year: "", assigned_to_type: "", assigned_by: "", assigned_to: "", assigned_month: "12", assigned_target_val: "53534"),
+    ]
+    
 }

@@ -25,7 +25,7 @@ class TeamMemberTargetsDetailVC: UIViewController {
 
     //MARK: - IBOUTLETS
     @IBOutlet private weak var pieChartView: PieChartView!
-    @IBOutlet private weak var barChartView: BarChartView!
+    @IBOutlet private weak var combineChartView: CombinedChartView!
     @IBOutlet private weak var detailViewSwitch: UISwitch!
     @IBOutlet private weak var quarterPicker: UISegmentedControl!
     
@@ -59,82 +59,92 @@ class TeamMemberTargetsDetailVC: UIViewController {
     }
     
     private func setupPieChartView() {
-        let title = ["Achived", "Pending"]
-        let target:[Double] = [23000, 27000]
+
         pieChartView.drawHoleEnabled = false
         pieChartView.rotationEnabled = false
         pieChartView.highlightPerTapEnabled = false
         pieChartView.entryLabelColor = .red
-        setupPieChart(title, values: target)
+        
+        
+        setupPieChart(SalesRepTargets.dummyTargets[0])
         pieChartView.animate(xAxisDuration: 1)
     }
     
     private func setUpBarChartView() {
+        combineChartView.rightAxis.enabled = false
+        combineChartView.xAxis.labelPosition = .bottom
         
-        barChartView.rightAxis.enabled = false
-        barChartView.xAxis.labelPosition = .bottom
-        barChartView.xAxis.valueFormatter = XAxisNameFormater()
-        barChartView.xAxis.granularity = 1
+        combineChartView.pinchZoomEnabled = true
+        combineChartView.doubleTapToZoomEnabled = true
+        combineChartView.dragXEnabled = true
+        combineChartView.xAxis.valueFormatter = XAxisNameFormater()
+        combineChartView.leftAxis.valueFormatter = YAxisNameFormater()
+        combineChartView.xAxis.granularity = 1
+        combineChartView.xAxis.granularityEnabled = true
+
+        combineChartView.xAxis.drawGridLinesEnabled = false
         
-        let title = ["Achived", "Pending"]
-        let target:[Double] = [23000, 27000]
-        setupBarChart(title, values: target)
+        //let target:[Double] = [23000, 27000]
+        setupCombinedChart(SalesRepTargets.dummyTargets)
+        combineChartView.animate(xAxisDuration: 1)
     }
     
     private func updateView() {
         if currentView == .PieChart {
-            UIView.animate(withDuration: 2) {
-                self.pieCharViewLeadingConstraint.constant = 0
-                self.pieChartViewTrailingConstraint.constant = 0
-                
-                self.barCharViewLeadingConstraint.constant = self.view.frame.width
-                self.barCharViewTrailingConstraint.constant = self.view.frame.width
-                
-                self.view.setNeedsDisplay()
-            }
+            UIView.transition(from: combineChartView, to: pieChartView, duration: 0.7, options: [.transitionFlipFromLeft,.showHideTransitionViews, .layoutSubviews])
         } else {
-            UIView.animate(withDuration: 2) {
-                self.pieCharViewLeadingConstraint.constant -= -self.view.frame.width
-                self.pieChartViewTrailingConstraint.constant -= -self.view.frame.width
-                
-                self.barCharViewLeadingConstraint.constant = 0
-                self.barCharViewTrailingConstraint.constant = 0
-                self.view.setNeedsDisplay()
-            }
+            UIView.transition(from: pieChartView, to: combineChartView, duration: 0.7, options: [.transitionFlipFromRight,.showHideTransitionViews,.layoutSubviews])
         }
     }
     
     //MARK: PIE CHART SETUP
     
-    private func setupPieChart(_ dataPoints: [String], values: [Double]) {
+    private func setupPieChart(_ dataPoints: SalesRepTargets) {
         var dataEntries = [PieChartDataEntry]()
         
-        for pointIndex in 0 ..< dataPoints.count {
-            let dataEntry = PieChartDataEntry(value: values[pointIndex], label: dataPoints[pointIndex])
-            dataEntries.append(dataEntry)
-        }
+        let dataEntry1 = PieChartDataEntry(value: dataPoints.getAssignedTarget , label: "Assigned")
+        let dataEntry2 = PieChartDataEntry(value: dataPoints.getAchievedTarget, data: "Achived")
+        dataEntries = [dataEntry1, dataEntry2]
         let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: "Pie")
         pieChartView.data = PieChartData(dataSet: pieChartDataSet)
         pieChartDataSet.colors = [.red,.green]
     }
     
     //MARK: BAR CHART SETUP
-    private func setupBarChart(_ dataPoints: [String], values: [Double]) {
+    private func setupCombinedChart(_ dataPoints: [SalesRepTargets]) {
         
-        let entry1 = BarChartDataEntry(x: 1, y:20)
-        let entry2 = BarChartDataEntry(x: 1, y:10)
-        let entry3 = BarChartDataEntry(x: 2, yValues: [25,27])
+        var lineChartEntries = [ChartDataEntry]()
+        var barChartDataEntry = [BarChartDataEntry]()
         
-                
-        let barChartSet1 = BarChartDataSet(entries: [entry1,entry2,entry3])
-        barChartSet1.stackLabels = ["Assigned","Acheived"]
-        barChartSet1.barShadowColor = .darkGray
-        barChartSet1.colors = [UIColor.green.withAlphaComponent(0.6)]
-        barChartSet1.label = "Months"
-        let data = BarChartData(dataSets: [barChartSet1])
+        //creating data entry points for line and bar
+        for index in 1 ... dataPoints.count {
+            print(index)
+            lineChartEntries.append(ChartDataEntry(x: Double(index), y: dataPoints[index-1].getAchievedTarget))
+            barChartDataEntry.append(BarChartDataEntry(x: Double(index), y: dataPoints[index-1].getAssignedTarget))
+        }
         
+        //line chart data set
+        let lineChartDataSet = LineChartDataSet(entries: lineChartEntries)
+        lineChartDataSet.lineWidth = 0.0
+        lineChartDataSet.cubicIntensity = 1
+        lineChartDataSet.drawCirclesEnabled = true
+        lineChartDataSet.drawValuesEnabled = true
+        lineChartDataSet.isHorizontalHighlightIndicatorEnabled = false
+        lineChartDataSet.isVerticalHighlightIndicatorEnabled = false
+        lineChartDataSet.circleColors = [.green]
         
-        barChartView.data = data
+        //bar graph data set
+        let barGraphDataSet = BarChartDataSet(entries: barChartDataEntry)
+        barGraphDataSet.colors = [UIColor(red: 0/255, green: 128/255, blue: 128/255, alpha: 1.0)]
+        
+        //combined chart data
+        let data = CombinedChartData()
+        data.lineData = LineChartData(dataSet: lineChartDataSet)
+        data.barData = BarChartData(dataSet: barGraphDataSet)
+        
+        combineChartView.xAxis.axisMinimum = data.lineData.xMin - 1
+        combineChartView.xAxis.axisMaximum = data.lineData.xMax + 1
+        combineChartView.data = data
         
     }
 }
@@ -159,5 +169,18 @@ final class XAxisNameFormater: NSObject, IAxisValueFormatter {
             
         }
     }
-    
 }
+
+final class YAxisNameFormater: NSObject, IAxisValueFormatter {
+
+    func stringForValue( _ value: Double, axis _: AxisBase?) -> String {
+        let val = Int(value)
+        if val/1000 > 0 {
+            return "\(val/1000)K"
+        } else {
+            return "\(val)"
+        }
+    }
+}
+
+

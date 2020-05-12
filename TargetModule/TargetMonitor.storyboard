@@ -16,28 +16,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7rI-XV-xQq" customClass="PieChartView" customModule="Charts">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TUx-s5-qRE">
                                 <rect key="frame" x="0.0" y="175" width="414" height="290"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7rI-XV-xQq" customClass="PieChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="290"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" secondItem="7rI-XV-xQq" secondAttribute="width" multiplier="0.7" id="RGN-Ii-flf"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nf7-ET-IMK" customClass="BarChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="290"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" secondItem="nf7-ET-IMK" secondAttribute="width" multiplier="0.7" id="W2m-Jy-MHG"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" secondItem="7rI-XV-xQq" secondAttribute="width" multiplier="0.7" id="RGN-Ii-flf"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nf7-ET-IMK" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="175" width="414" height="290"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" secondItem="nf7-ET-IMK" secondAttribute="width" multiplier="0.7" id="W2m-Jy-MHG"/>
+                                    <constraint firstAttribute="height" secondItem="TUx-s5-qRE" secondAttribute="width" multiplier="0.7" id="7ho-F8-0AW"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxU-r7-faw">
-                                <rect key="frame" x="16" y="465" width="382" height="33.5"/>
+                                <rect key="frame" x="16" y="469" width="382" height="33.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AxN-EX-Pk0">
-                                <rect key="frame" x="16" y="498.5" width="382" height="363.5"/>
+                                <rect key="frame" x="16" y="502.5" width="382" height="359.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SalesRepCell" textLabel="M7M-7p-5jb" style="IBUITableViewCellStyleDefault" id="xBR-cO-MSU">
@@ -95,25 +104,23 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="AxN-EX-Pk0" firstAttribute="top" secondItem="uxU-r7-faw" secondAttribute="bottom" id="1vS-5O-csg"/>
-                            <constraint firstItem="5gI-ZJ-tyC" firstAttribute="trailing" secondItem="7rI-XV-xQq" secondAttribute="trailing" id="6W3-Ec-lcy"/>
                             <constraint firstItem="AxN-EX-Pk0" firstAttribute="bottom" secondItem="5gI-ZJ-tyC" secondAttribute="bottom" id="6oX-nr-Ogc"/>
                             <constraint firstItem="Dhk-G7-xeQ" firstAttribute="leading" secondItem="bX5-9q-6cC" secondAttribute="trailing" constant="8" id="6w7-YH-TYb"/>
-                            <constraint firstItem="nf7-ET-IMK" firstAttribute="top" secondItem="Dhk-G7-xeQ" secondAttribute="bottom" constant="8" id="D0R-SS-ywm"/>
                             <constraint firstItem="AxN-EX-Pk0" firstAttribute="trailing" secondItem="5gI-ZJ-tyC" secondAttribute="trailing" constant="-16" id="Emr-9D-B1v"/>
-                            <constraint firstItem="7rI-XV-xQq" firstAttribute="top" secondItem="Dhk-G7-xeQ" secondAttribute="bottom" constant="8" id="KfU-Cq-J7z"/>
                             <constraint firstItem="AxN-EX-Pk0" firstAttribute="leading" secondItem="5gI-ZJ-tyC" secondAttribute="leading" constant="16" id="MOM-l2-9dy"/>
                             <constraint firstItem="uxU-r7-faw" firstAttribute="leading" secondItem="5gI-ZJ-tyC" secondAttribute="leading" constant="16" id="Nip-Bd-9GC"/>
                             <constraint firstItem="5gI-ZJ-tyC" firstAttribute="trailing" secondItem="qoS-y8-tcv" secondAttribute="trailing" constant="16" id="PSz-eb-hkN"/>
-                            <constraint firstItem="uxU-r7-faw" firstAttribute="top" secondItem="7rI-XV-xQq" secondAttribute="bottom" id="Pn5-vp-yXw"/>
-                            <constraint firstItem="5gI-ZJ-tyC" firstAttribute="trailing" secondItem="nf7-ET-IMK" secondAttribute="trailing" id="Qil-Mu-KSk"/>
+                            <constraint firstItem="TUx-s5-qRE" firstAttribute="top" secondItem="Dhk-G7-xeQ" secondAttribute="bottom" constant="8" id="QWd-2Z-Bkm"/>
                             <constraint firstItem="Dhk-G7-xeQ" firstAttribute="top" secondItem="qoS-y8-tcv" secondAttribute="bottom" constant="4" id="S9t-V8-qiL"/>
-                            <constraint firstItem="7rI-XV-xQq" firstAttribute="leading" secondItem="5gI-ZJ-tyC" secondAttribute="leading" id="cEr-Kr-lo5"/>
+                            <constraint firstItem="uxU-r7-faw" firstAttribute="top" secondItem="TUx-s5-qRE" secondAttribute="bottom" constant="4" id="cQl-AH-FSV"/>
                             <constraint firstItem="qoS-y8-tcv" firstAttribute="top" secondItem="5gI-ZJ-tyC" secondAttribute="top" id="deu-67-aZZ"/>
                             <constraint firstItem="bX5-9q-6cC" firstAttribute="centerY" secondItem="Dhk-G7-xeQ" secondAttribute="centerY" id="eFd-fm-wto"/>
+                            <constraint firstItem="TUx-s5-qRE" firstAttribute="width" secondItem="L6f-tr-Yz2" secondAttribute="width" id="gfR-Vx-DZx"/>
                             <constraint firstItem="5gI-ZJ-tyC" firstAttribute="trailing" secondItem="uxU-r7-faw" secondAttribute="trailing" constant="16" id="jen-b0-8dt"/>
                             <constraint firstItem="qoS-y8-tcv" firstAttribute="leading" secondItem="5gI-ZJ-tyC" secondAttribute="leading" constant="16" id="mkb-Fx-Egz"/>
+                            <constraint firstItem="TUx-s5-qRE" firstAttribute="trailing" secondItem="5gI-ZJ-tyC" secondAttribute="trailing" id="qrJ-5w-1Qh"/>
+                            <constraint firstItem="TUx-s5-qRE" firstAttribute="leading" secondItem="5gI-ZJ-tyC" secondAttribute="leading" id="rV1-dX-C2W"/>
                             <constraint firstItem="5gI-ZJ-tyC" firstAttribute="trailing" secondItem="Dhk-G7-xeQ" secondAttribute="trailing" constant="16" id="sD5-xf-kgG"/>
-                            <constraint firstItem="nf7-ET-IMK" firstAttribute="leading" secondItem="5gI-ZJ-tyC" secondAttribute="leading" id="zIU-Sf-WXH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5gI-ZJ-tyC"/>
                     </view>
@@ -138,18 +145,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0qh-MU-KV9" customClass="PieChartView" customModule="Charts">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eVW-oO-N1E">
                                 <rect key="frame" x="0.0" y="131" width="414" height="290"/>
-                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0qh-MU-KV9" customClass="PieChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="290"/>
+                                        <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmX-ra-njg" customClass="CombinedChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="290"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" secondItem="0qh-MU-KV9" secondAttribute="width" multiplier="0.7" id="wK8-nV-SLt"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmX-ra-njg" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="131" width="414" height="290"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" secondItem="hmX-ra-njg" secondAttribute="width" multiplier="0.7" id="Ya0-n9-Agz"/>
+                                    <constraint firstItem="hmX-ra-njg" firstAttribute="top" secondItem="eVW-oO-N1E" secondAttribute="top" id="2aI-ew-UjB"/>
+                                    <constraint firstAttribute="height" secondItem="eVW-oO-N1E" secondAttribute="width" multiplier="0.7" id="IdP-ye-7kR"/>
+                                    <constraint firstAttribute="trailing" secondItem="hmX-ra-njg" secondAttribute="trailing" id="QCk-G7-1jc"/>
+                                    <constraint firstAttribute="bottom" secondItem="0qh-MU-KV9" secondAttribute="bottom" id="RAD-Ij-jei"/>
+                                    <constraint firstItem="hmX-ra-njg" firstAttribute="leading" secondItem="eVW-oO-N1E" secondAttribute="leading" id="WG3-k2-ZGp"/>
+                                    <constraint firstItem="0qh-MU-KV9" firstAttribute="top" secondItem="eVW-oO-N1E" secondAttribute="top" id="WKK-kE-cJO"/>
+                                    <constraint firstAttribute="trailing" secondItem="0qh-MU-KV9" secondAttribute="trailing" id="aTT-s8-igQ"/>
+                                    <constraint firstItem="0qh-MU-KV9" firstAttribute="leading" secondItem="eVW-oO-N1E" secondAttribute="leading" id="dFb-le-7Ff"/>
+                                    <constraint firstAttribute="bottom" secondItem="hmX-ra-njg" secondAttribute="bottom" id="ohJ-EQ-Dbs"/>
                                 </constraints>
                             </view>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gqU-2x-Oqn">
@@ -165,7 +183,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dwr-hM-c9y">
-                                <rect key="frame" x="8" y="430" width="398" height="45"/>
+                                <rect key="frame" x="8" y="429" width="398" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="qFz-iZ-M9f"/>
                                 </constraints>
@@ -180,34 +198,25 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="hmX-ra-njg" firstAttribute="leading" secondItem="igZ-lr-dyL" secondAttribute="leading" id="04m-bP-4hJ"/>
                             <constraint firstItem="gqU-2x-Oqn" firstAttribute="top" secondItem="igZ-lr-dyL" secondAttribute="top" constant="4" id="3IQ-lI-b7A"/>
                             <constraint firstItem="igZ-lr-dyL" firstAttribute="trailing" secondItem="dwr-hM-c9y" secondAttribute="trailing" constant="8" id="AtN-5D-Qx0"/>
-                            <constraint firstItem="hmX-ra-njg" firstAttribute="trailing" secondItem="igZ-lr-dyL" secondAttribute="trailing" id="GkU-rP-HCc"/>
-                            <constraint firstItem="dwr-hM-c9y" firstAttribute="top" secondItem="hmX-ra-njg" secondAttribute="bottom" constant="9" id="LKT-Lr-SWo"/>
-                            <constraint firstItem="igZ-lr-dyL" firstAttribute="trailing" secondItem="0qh-MU-KV9" secondAttribute="trailing" id="RgF-MR-G4h"/>
+                            <constraint firstItem="dwr-hM-c9y" firstAttribute="top" secondItem="eVW-oO-N1E" secondAttribute="bottom" constant="8" id="B0W-Et-5tg"/>
+                            <constraint firstItem="eVW-oO-N1E" firstAttribute="top" secondItem="gqU-2x-Oqn" secondAttribute="bottom" constant="8" id="SeI-8O-TKm"/>
                             <constraint firstItem="HPn-gK-hKg" firstAttribute="centerY" secondItem="gqU-2x-Oqn" secondAttribute="centerY" id="WK5-PD-DWg"/>
-                            <constraint firstItem="hmX-ra-njg" firstAttribute="top" secondItem="gqU-2x-Oqn" secondAttribute="bottom" constant="8" id="bT0-1h-lgT"/>
+                            <constraint firstItem="eVW-oO-N1E" firstAttribute="trailing" secondItem="igZ-lr-dyL" secondAttribute="trailing" id="dnD-N9-yxy"/>
                             <constraint firstItem="dwr-hM-c9y" firstAttribute="leading" secondItem="igZ-lr-dyL" secondAttribute="leading" constant="8" id="igr-Vc-uhx"/>
-                            <constraint firstItem="hmX-ra-njg" firstAttribute="width" secondItem="RGj-Sk-BOj" secondAttribute="width" id="lcF-qy-1xk"/>
                             <constraint firstItem="gqU-2x-Oqn" firstAttribute="leading" secondItem="HPn-gK-hKg" secondAttribute="trailing" constant="8" id="mZQ-c8-vo3"/>
+                            <constraint firstItem="eVW-oO-N1E" firstAttribute="leading" secondItem="igZ-lr-dyL" secondAttribute="leading" id="oaW-Lj-fC0"/>
+                            <constraint firstItem="eVW-oO-N1E" firstAttribute="width" secondItem="RGj-Sk-BOj" secondAttribute="width" id="rVA-sb-Oac"/>
                             <constraint firstItem="igZ-lr-dyL" firstAttribute="trailing" secondItem="gqU-2x-Oqn" secondAttribute="trailing" constant="16" id="rlQ-eV-U1G"/>
-                            <constraint firstItem="0qh-MU-KV9" firstAttribute="top" secondItem="gqU-2x-Oqn" secondAttribute="bottom" constant="8" id="ubq-op-ZsT"/>
-                            <constraint firstItem="0qh-MU-KV9" firstAttribute="leading" secondItem="igZ-lr-dyL" secondAttribute="leading" id="wHo-tM-kHL"/>
-                            <constraint firstItem="dwr-hM-c9y" firstAttribute="top" secondItem="0qh-MU-KV9" secondAttribute="bottom" constant="9" id="xmO-WZ-XKY"/>
-                            <constraint firstItem="0qh-MU-KV9" firstAttribute="width" secondItem="RGj-Sk-BOj" secondAttribute="width" id="xwP-vn-SLA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="igZ-lr-dyL"/>
                     </view>
                     <navigationItem key="navigationItem" id="Cug-qp-vV8"/>
                     <connections>
-                        <outlet property="barCharViewLeadingConstraint" destination="GkU-rP-HCc" id="F9L-Jf-Mdi"/>
-                        <outlet property="barCharViewTrailingConstraint" destination="04m-bP-4hJ" id="377-aK-5Rx"/>
-                        <outlet property="barChartView" destination="hmX-ra-njg" id="xMm-tf-hWr"/>
+                        <outlet property="combineChartView" destination="hmX-ra-njg" id="cDl-a1-4ls"/>
                         <outlet property="detailViewSwitch" destination="gqU-2x-Oqn" id="HWP-az-zw0"/>
-                        <outlet property="pieCharViewLeadingConstraint" destination="wHo-tM-kHL" id="FYn-Oh-Vm2"/>
                         <outlet property="pieChartView" destination="0qh-MU-KV9" id="XUT-JE-ETQ"/>
-                        <outlet property="pieChartViewTrailingConstraint" destination="RgF-MR-G4h" id="fll-t2-Ara"/>
                         <outlet property="quarterPicker" destination="dwr-hM-c9y" id="qOn-e1-O8C"/>
                     </connections>
                 </viewController>
