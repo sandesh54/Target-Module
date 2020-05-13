@@ -365,9 +365,7 @@ extension ViewController: ExpandingCellDataSource {
     
     func getQuarterForTargets(for cell: ExpandingCell) -> Int {
         return selectedQuarter
-    }
-    
-    
+    }    
 }
 
 extension ViewController: ExpandingCellDelegate {

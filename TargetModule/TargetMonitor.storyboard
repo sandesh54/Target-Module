@@ -19,24 +19,26 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TUx-s5-qRE">
                                 <rect key="frame" x="0.0" y="175" width="414" height="290"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7rI-XV-xQq" customClass="PieChartView" customModule="Charts">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7rI-XV-xQq" customClass="PieChartView" customModule="Charts">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="290"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" secondItem="7rI-XV-xQq" secondAttribute="width" multiplier="0.7" id="RGN-Ii-flf"/>
-                                        </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nf7-ET-IMK" customClass="BarChartView" customModule="Charts">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nf7-ET-IMK" customClass="CombinedChartView" customModule="Charts">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="290"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" secondItem="nf7-ET-IMK" secondAttribute="width" multiplier="0.7" id="W2m-Jy-MHG"/>
-                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="nf7-ET-IMK" secondAttribute="bottom" id="2KR-9k-eoW"/>
                                     <constraint firstAttribute="height" secondItem="TUx-s5-qRE" secondAttribute="width" multiplier="0.7" id="7ho-F8-0AW"/>
+                                    <constraint firstItem="nf7-ET-IMK" firstAttribute="top" secondItem="TUx-s5-qRE" secondAttribute="top" id="9bH-9l-STt"/>
+                                    <constraint firstAttribute="trailing" secondItem="7rI-XV-xQq" secondAttribute="trailing" id="Aaq-wp-qXj"/>
+                                    <constraint firstAttribute="trailing" secondItem="nf7-ET-IMK" secondAttribute="trailing" id="LDj-dv-qph"/>
+                                    <constraint firstItem="nf7-ET-IMK" firstAttribute="leading" secondItem="TUx-s5-qRE" secondAttribute="leading" id="ei6-EC-Arc"/>
+                                    <constraint firstItem="7rI-XV-xQq" firstAttribute="leading" secondItem="TUx-s5-qRE" secondAttribute="leading" id="oJB-aO-pSr"/>
+                                    <constraint firstAttribute="bottom" secondItem="7rI-XV-xQq" secondAttribute="bottom" id="p00-6V-jmm"/>
+                                    <constraint firstItem="7rI-XV-xQq" firstAttribute="top" secondItem="TUx-s5-qRE" secondAttribute="top" id="u2W-8w-KqR"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxU-r7-faw">
@@ -126,10 +128,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="Urf-9e-ySi"/>
                     <connections>
-                        <outlet property="barChart" destination="nf7-ET-IMK" id="CBF-tn-GZY"/>
+                        <outlet property="barChart" destination="nf7-ET-IMK" id="gmK-sv-rvs"/>
                         <outlet property="detailViewSwitch" destination="Dhk-G7-xeQ" id="ykn-cm-kQr"/>
                         <outlet property="pieChart" destination="7rI-XV-xQq" id="xFu-PV-399"/>
+                        <outlet property="quarterSelectionButton" destination="ByE-Ml-mcn" id="W1W-VZ-OpX"/>
                         <outlet property="salesRepTableView" destination="AxN-EX-Pk0" id="4RQ-dT-lkD"/>
+                        <outlet property="yearSelectionButton" destination="9HN-bn-b56" id="uvN-L3-R1c"/>
                         <segue destination="Ndc-UU-TQy" kind="show" identifier="showDetails" id="JQL-Mv-bcc"/>
                     </connections>
                 </viewController>
@@ -194,6 +198,9 @@
                                     <segment title="Q4"/>
                                     <segment title="Year"/>
                                 </segments>
+                                <connections>
+                                    <action selector="quarterSegemntChaned:" destination="Ndc-UU-TQy" eventType="valueChanged" id="L3I-Em-XB1"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

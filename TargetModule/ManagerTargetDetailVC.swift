@@ -12,7 +12,7 @@ class ManagerTargetDetailVC: UIViewController {
     
     enum ManagerOptions {
         case YearlyTargets
-        case AllocatedvsAssignedTargets
+        case ds
     }
     
     //MARK:- PROPERTIES
@@ -40,6 +40,8 @@ class ManagerTargetDetailVC: UIViewController {
     //MARK: - IBOUTLETS
     @IBOutlet weak var managerTargetsInfoTable: UITableView!
     
+    
+    //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTable()

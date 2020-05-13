@@ -16,6 +16,7 @@ class TeamMemberTargetsDetailVC: UIViewController {
     }
     
     var teamMember: SalesRep?
+    private var myTargets: [MyTargets]?
     
     private var currentView: ChartView = .PieChart {
         didSet {
@@ -29,11 +30,6 @@ class TeamMemberTargetsDetailVC: UIViewController {
     @IBOutlet private weak var detailViewSwitch: UISwitch!
     @IBOutlet private weak var quarterPicker: UISegmentedControl!
     
-    @IBOutlet private weak var pieCharViewLeadingConstraint: NSLayoutConstraint!
-    @IBOutlet private weak var pieChartViewTrailingConstraint: NSLayoutConstraint!
-    @IBOutlet private weak var barCharViewTrailingConstraint: NSLayoutConstraint!
-    @IBOutlet private weak var barCharViewLeadingConstraint: NSLayoutConstraint!
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupSubView()
@@ -49,6 +45,10 @@ class TeamMemberTargetsDetailVC: UIViewController {
         }
     }
     
+    @IBAction func quarterSegemntChaned(_ sender: UISegmentedControl) {
+        updateChartForQuarter(sender.selectedSegmentIndex)
+    }
+    
     //MARK: - PRIVATE METHODS
     
     private func setupSubView() {
@@ -60,20 +60,16 @@ class TeamMemberTargetsDetailVC: UIViewController {
     
     private func setupPieChartView() {
 
-        pieChartView.drawHoleEnabled = false
         pieChartView.rotationEnabled = false
         pieChartView.highlightPerTapEnabled = false
-        pieChartView.entryLabelColor = .red
-        
-        
-        setupPieChart(SalesRepTargets.dummyTargets[0])
-        pieChartView.animate(xAxisDuration: 1)
+        pieChartView.entryLabelColor = .white
+        updateChartForQuarter(0)
+
     }
     
     private func setUpBarChartView() {
         combineChartView.rightAxis.enabled = false
         combineChartView.xAxis.labelPosition = .bottom
-        
         combineChartView.pinchZoomEnabled = true
         combineChartView.doubleTapToZoomEnabled = true
         combineChartView.dragXEnabled = true
@@ -81,12 +77,10 @@ class TeamMemberTargetsDetailVC: UIViewController {
         combineChartView.leftAxis.valueFormatter = YAxisNameFormater()
         combineChartView.xAxis.granularity = 1
         combineChartView.xAxis.granularityEnabled = true
-
         combineChartView.xAxis.drawGridLinesEnabled = false
         
-        //let target:[Double] = [23000, 27000]
-        setupCombinedChart(SalesRepTargets.dummyTargets)
-        combineChartView.animate(xAxisDuration: 1)
+        updateChartForQuarter(0)
+        
     }
     
     private func updateView() {
@@ -97,17 +91,45 @@ class TeamMemberTargetsDetailVC: UIViewController {
         }
     }
     
-    //MARK: PIE CHART SETUP
-    
-    private func setupPieChart(_ dataPoints: SalesRepTargets) {
-        var dataEntries = [PieChartDataEntry]()
+    private func updateChartForQuarter(_ quarter: Int) {
+        var quarterTargets = [SalesRepTargets]()
+        switch quarter {
+        case 0:
+            quarterTargets = SalesRepTargets.dummyTargets.filter { ["4","5","6"].contains($0.assigned_month) }
+        case 1:
+             quarterTargets = SalesRepTargets.dummyTargets.filter { ["7","8","9"].contains($0.assigned_month) }
+        case 2:
+             quarterTargets = SalesRepTargets.dummyTargets.filter { ["10","11","12"].contains($0.assigned_month) }
+        case 3:
+             quarterTargets = SalesRepTargets.dummyTargets.filter { ["1","2","3"].contains($0.assigned_month) }
+        case 4:
+            quarterTargets = SalesRepTargets.dummyTargets
+        default: break
+        }
         
-        let dataEntry1 = PieChartDataEntry(value: dataPoints.getAssignedTarget , label: "Assigned")
-        let dataEntry2 = PieChartDataEntry(value: dataPoints.getAchievedTarget, data: "Achived")
+        if currentView == .BarChart {
+            setupCombinedChart(quarterTargets)
+            combineChartView.animate(yAxisDuration: 0.7)
+        } else {
+            setupPieChart(quarterTargets)
+            pieChartView.animate(xAxisDuration: 1)
+            pieChartView.animate(yAxisDuration: 1)
+        }
+        
+    }
+    
+    //MARK: PIE CHART SETUP
+    #warning("assigned_target_val tobe replaced by acieved and pending")
+    private func setupPieChart(_ dataPoints: [SalesRepTargets]) {
+        var dataEntries = [PieChartDataEntry]()
+        let assignedTarget = dataPoints.reduce(0) { $0 + (Double($1.assigned_target_val) ?? 0)}
+        pieChartView.centerText = "Total \n \(assignedTarget)"
+        let dataEntry1 = PieChartDataEntry(value: assignedTarget , label: "Assigned")
+        let dataEntry2 = PieChartDataEntry(value: dataPoints.randomElement()!.getAchievedTarget, data: "Achived")
         dataEntries = [dataEntry1, dataEntry2]
         let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: "Pie")
         pieChartView.data = PieChartData(dataSet: pieChartDataSet)
-        pieChartDataSet.colors = [.red,.green]
+        pieChartDataSet.colors = [.blue,.green]
     }
     
     //MARK: BAR CHART SETUP
@@ -129,8 +151,8 @@ class TeamMemberTargetsDetailVC: UIViewController {
         lineChartDataSet.cubicIntensity = 1
         lineChartDataSet.drawCirclesEnabled = true
         lineChartDataSet.drawValuesEnabled = true
-        lineChartDataSet.isHorizontalHighlightIndicatorEnabled = false
-        lineChartDataSet.isVerticalHighlightIndicatorEnabled = false
+        lineChartDataSet.drawHorizontalHighlightIndicatorEnabled = false
+        lineChartDataSet.drawVerticalHighlightIndicatorEnabled = false
         lineChartDataSet.circleColors = [.green]
         
         //bar graph data set
@@ -166,7 +188,6 @@ final class XAxisNameFormater: NSObject, IAxisValueFormatter {
         case 11: return "Nov"
         case 12: return "Dec"
         default: return ""
-            
         }
     }
 }
